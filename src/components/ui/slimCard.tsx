@@ -19,9 +19,9 @@ export function SlimCard({
   buttonLink,
 }: SlimCardProps) {
   return (
-    <Card className="flex md:w-[14.84375vw] md:py-[2.08333vw] md:pl-[1.04167vw] md:pr-[2.08333vw] flex-col items-start space-y-[2.08333vw] self-stretch rounded-[1.04167vw] bg-[#000] border-none outline-none hover:transform hover:scale-105 hover:shadow-lg transition-all duration-300">
+    <Card className="flex md:w-[14.84375vw] md:py-[2.08333vw] md:pl-[1.04167vw] md:pr-[2.08333vw] flex-col items-start space-y-[2.08333vw] self-stretch rounded-[1.04167vw] bg-[#000] border-none outline-none hover:transform hover:-translate-y-10 hover:shadow-white transition-all duration-300">
       <Link href={buttonLink || "#"}>
-        <Button isRound variant={"default"} size={"icon"}>
+        <Button variant={"default"} size={"icon"}>
           <div className="md:w-[1.25vw] md:h-[1.25vw] relative">
             <Image
               layout="fill"
