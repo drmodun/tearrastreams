@@ -1,9 +1,34 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import { TitleCard, TitleCardButtonProps } from "@/components/ui/titleCard";
+import earth from "@assets/earth.svg";
+
+const mainTitleButtons: TitleCardButtonProps[] = [
+  {
+    buttonText: "Get started",
+    link: "/map",
+  },
+  {
+    buttonText: "Learn more",
+    variant: "link",
+    link: "/#faq",
+  },
+];
 
 export default function Home() {
   return (
     <div className={styles.page}>
+      <TitleCard
+        titleFirstPart="Your Data-Powered Environmental"
+        specialWord="Risk"
+        titleSecondPart="Evaluator"
+        description="Leverage satellite data, user-generated content, and social listening to deliver real-time insights on environmental risks. Empower your sustainability strategies with TerraStream today."
+        buttons={mainTitleButtons}
+      >
+        <div className="w-100% h-">
+          <Image layout="fill" src={earth} alt="Hero image" priority />
+        </div>
+      </TitleCard>
       <main className={styles.main}>
         <Image
           className={styles.logo}
