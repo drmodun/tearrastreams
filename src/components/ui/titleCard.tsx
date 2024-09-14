@@ -1,13 +1,13 @@
 import * as React from "react";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/common/button";
 import {
   Card,
   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from "@/components/ui/common/card";
 import Link from "next/link";
 
 export interface TitleCardButtonProps {
@@ -43,7 +43,7 @@ export function TitleCard({
     buttons?.length && (
       <Card
         className="flex md:h-[30.20833vw] md:w-[60vw]  items-center flex-grow-0
-      flex-shrink-0 flex-auto md:rounded-[2.08333vw] bg-[#272829] outline-none border-none"
+      flex-shrink-0 flex-auto md:rounded-[2.08333vw] bg-[#000000] outline-none border-none md:px-[1.08333vw] md:py-[2.08333vw] md:gap-x-[2.08333vw] md:gap-y-[2.08333vw] md:justify-between"
       >
         <section className="flex-col md:w-[32.3vw]">
           <CardHeader>

@@ -1,7 +1,8 @@
 import Image from "next/image";
-import styles from "./page.module.css";
 import { TitleCard, TitleCardButtonProps } from "@/components/ui/titleCard";
 import earth from "@assets/earth.svg";
+import { SpecialTitle } from "@/components/ui/specialTitle";
+import { SlimCard, SlimCardProps } from "@/components/ui/slimCard";
 
 const mainTitleButtons: TitleCardButtonProps[] = [
   {
@@ -15,9 +16,36 @@ const mainTitleButtons: TitleCardButtonProps[] = [
   },
 ];
 
+const slimCardsData: SlimCardProps[] = [
+  {
+    title: "Add your GeoData",
+    description:
+      "Upload GeoJSON files with ease, and let TerraStream analyze your region's environmental status in seconds.",
+    buttonLink: "/map",
+  },
+  {
+    title: "Generate Real-Time reports",
+    description:
+      "Using satellite data from Copernicus, TerraStream calculates deforestation, water pollution risks, and carbon footprint metrics.",
+    buttonLink: "/map",
+  },
+  {
+    title: "Contribute Your User Data",
+    description:
+      "Upload GeoJSON files with ease, and let TerraStream analyze your region's environmental status in seconds.",
+    buttonLink: "/map",
+  },
+  {
+    title: "Social Listening & Sentiment Analysis",
+    description:
+      "Track and analyze social media posts related to environmental issues, with insights into public sentiment on sustainability in specific regions.",
+    buttonLink: "/map",
+  },
+];
+
 export default function Home() {
   return (
-    <div className={styles.page}>
+    <div className="bg-[#101112] flex-col align-middle md:px-[19vw]">
       <TitleCard
         titleFirstPart="Your Data-Powered Environmental"
         specialWord="Risk"
@@ -29,92 +57,18 @@ export default function Home() {
           <Image layout="fill" src={earth} alt="Hero image" priority />
         </div>
       </TitleCard>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+      <article className="flex-col md:gap-y-[2vw]">
+        <SpecialTitle
+          textBeforeSpecialSection="Unleash Your Power for"
+          specialWord="Sustainability"
+          description="TerraStreams enables citizens, companies, and governments to monitor environmental risks and reduce their carbon footprint using satellite data, user-generated content, and sentiment analysis."
         />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file-text.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <section className="flex flex-row md:gap-x-[1vw]">
+          {slimCardsData.map((card, index) => (
+            <SlimCard key={index} {...card} />
+          ))}
+        </section>
+      </article>
     </div>
   );
 }
