@@ -6,7 +6,24 @@ from pyproj import Transformer
 import argparse
 import os
 from dotenv import load_dotenv
+from fastapi import FastAPI
 import json
+from pydantic import BaseModel
+
+
+app = FastAPI()
+
+class Item(BaseModel):
+    north: float
+    west: float
+    south: float
+    east: float
+    output: str
+
+
+@app.post("/")
+async def root(item: Item):
+    return nvdi_service(item)
 
 def get_args():
     parser = argparse.ArgumentParser()
@@ -106,8 +123,8 @@ def write_ndvi_to_json(mean_ndvi, output_file):
     with open(output_file+"/ndvi.json", 'w') as json_file:
         json.dump(ndvi_data, json_file)
 
-if __name__ == "__main__":
-    args =get_args()
+def nvdi_service(item: Item):
+    args =Item
     # load config for api access to terra catalogue api: 
     config = load_envs()
     # load the catalog
@@ -137,6 +154,7 @@ if __name__ == "__main__":
     write_ndvi_to_json(mean_ndvi, args.output)
     
     print(f"NDVI calculation complete: {mean_ndvi}. Output written to {args.output}")
+    return mean_ndvi
  
 
 
