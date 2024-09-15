@@ -29,5 +29,6 @@ RUN pip install --no-cache-dir \
     python-dotenv
 
 EXPOSE 80
-
-CMD ["fastapi", "run", "main.py", "--port", "80"]
+EXPOSE 8080
+EXPOSE 8000
+CMD ["fastapi", "run", "main.py", "--host", "0.0.0.0", "--port", "80"]

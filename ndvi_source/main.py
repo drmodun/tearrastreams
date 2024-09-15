@@ -122,9 +122,9 @@ def write_ndvi_to_json(mean_ndvi, output_file):
     
     with open(output_file+"/ndvi.json", 'w') as json_file:
         json.dump(ndvi_data, json_file)
+    return ndvi_data
 
 def nvdi_service(item: Item):
-    args =Item
     # load config for api access to terra catalogue api: 
     config = load_envs()
     # load the catalog
@@ -141,7 +141,7 @@ def nvdi_service(item: Item):
     # Test collection
     collection = "urn:eop:VITO:ESA_WorldCover_S2RGBNIR_10m_2021_V2"
 
-    coordinates = [args.west,args.south,args.east,args.north]
+    coordinates = [item.west,item.south,item.east,item.north]
 
     # get images and select the last one
     image,title = get_products(coordinates,catalogue,collection)
@@ -151,10 +151,10 @@ def nvdi_service(item: Item):
     # extract nvdi
     mean_ndvi = calculate_nvdi(f"./{title}/{title}.tif")
 
-    write_ndvi_to_json(mean_ndvi, args.output)
+    jsonObject = write_ndvi_to_json(mean_ndvi, item.output)
     
-    print(f"NDVI calculation complete: {mean_ndvi}. Output written to {args.output}")
-    return mean_ndvi
+    print(f"NDVI calculation complete: {mean_ndvi}. Output written to {item.output}")
+    return jsonObject
  
 
 
