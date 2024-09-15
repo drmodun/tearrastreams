@@ -90,7 +90,7 @@ const questions: QuestionProp[] = [
 
 export default function Home() {
   return (
-    <div className="bg-[#101112] flex-col align-middle md:px-[19vw]">
+    <div className="bg-[#101112] flex flex-col align-middle md:px-[19vw] md:gap-y-[8.5vw]">
       <TitleCard
         titleFirstPart="Your Data-Powered Environmental"
         specialWord="Risk"
