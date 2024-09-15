@@ -1,0 +1,172 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>
+        Environmental Evaluation Report
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/apps/terraStream/style.css">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.css" rel="stylesheet" />
+    <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.4.3/mapbox-gl-draw.css' type='text/css' />
+</head>
+
+<body class="bg-black text-white">
+    <header class="header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="logo">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                        <h1>TerraStreams</h1>
+                    </div>
+                    <nav class="menu">
+                        <ul class="nav">
+                            <li class="nav-item"><a class="nav-link" href="#">How it Works</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Features</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">FAQs</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container mx-auto p-6">
+        <h1 class="text-3xl font-bold mb-4">
+            Get your Environmental Evaluation Report
+        </h1>
+        <div class="flex">
+            <div class="w-1/2">
+                <div class="mb-4">
+                    <div class="flex justify-between text-sm mb-2">
+                        <span>
+                            📍 coordinates
+                        </span>
+                        <span>
+                            📅 date
+                        </span>
+                        <span>
+                            📏 Area, sq.km
+                        </span>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="bg-gray-800 p-4 rounded-lg flex justify-between items-center border border-green-500">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-leaf">
+                            </i>
+                            <span>
+                                Vegetation Health Data (NDVI Sentinel-2)
+                            </span>
+                        </div>
+                        <span>
+                            0.70
+                        </span>
+                    </div>
+                    <div class="bg-gray-800 p-4 rounded-lg flex justify-between items-center">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-tint">
+                            </i>
+                            <span>
+                                Soil Moisture Levels
+                            </span>
+                        </div>
+                        <span>
+                            0.25
+                        </span>
+                    </div>
+                    <div class="bg-gray-800 p-4 rounded-lg flex justify-between items-center">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-water">
+                            </i>
+                            <span>
+                                Water Pollution Levels (Chlorophyll-a Concentration) mg/m²
+                            </span>
+                        </div>
+                        <span>
+                            25
+                        </span>
+                    </div>
+                    <div class="bg-gray-800 p-4 rounded-lg flex justify-between items-center">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-smog">
+                            </i>
+                            <span>
+                                Air Pollution Index (PM2.5), µg/m³
+                            </span>
+                        </div>
+                        <span>
+                            35
+                        </span>
+                    </div>
+                </div>
+                <div class="mt-6">
+                    <h2 class="text-xl font-semibold mb-2">
+                        Final Risk Assessment Rating
+                    </h2>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <span class="bg-yellow-500 text-black px-2 py-1 rounded">
+                            medium
+                        </span>
+                    </div>
+                    <ul class="list-disc list-inside space-y-2 text-sm">
+                        <li>
+                            Deforestation Risk: Moderate vegetation loss, but still viable forest cover.
+                        </li>
+                        <li>
+                            Water and Air Pollution: Both show moderate signs of environmental degradation, but
+                            manageable with proper intervention.
+                        </li>
+                        <li>
+                            Soil Moisture: Soil condition is stable and supports the ecosystem's current health.
+                        </li>
+                    </ul>
+                </div>
+                <button class="mt-6 bg-purple-600 text-white px-4 py-2 rounded">
+                    Add new GeoData
+                </button>
+            </div>
+            <div class="w-1/2 pl-6">
+                <div id="map"></div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 row">
+                    <div class="footer-logo col">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                        <h1>NajmAl</h1>
+                    </div>
+                    <div class="footer-links col">
+                        <ul class="nav">
+                            <li class="nav-item"><a class="nav-link" href="#">Privacy Policy</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Terms & Conditions</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jq/apps/terraStream/uery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit-id.js" crossorigin="anonymous"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.4.3/mapbox-gl-draw.js'></script>
+    <!--script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script-->
+    <script src="/apps/terraStream/map.js"></script>
+    <!-- <script src="/apps/terraStream/dashboard.js"></script> -->
+</body>
+</html>
