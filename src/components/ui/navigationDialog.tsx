@@ -48,7 +48,7 @@ export function ResultDialog() {
           </div>
         </div>
         <DialogFooter>
-          <Link href={`results/${resultId}`}>
+          <Link href={`/report/${resultId}`}>
             <Button variant="ghost" type="button">
               Search
             </Button>

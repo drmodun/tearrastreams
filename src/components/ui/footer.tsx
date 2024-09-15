@@ -32,7 +32,7 @@ export const Footer = () => {
               FAQ
             </span>
           </Link>
-          <Link href="/documentation">
+          <Link href="https://taikai.network/cassinihackathons/hackathons/environment-greentransition/projects/cm10z30c0002t5v2aid9yadoa/idea">
             <span className="text-white md:text-[0.9375vw] font-normal md:leading-[1.21875vw]">
               About
             </span>

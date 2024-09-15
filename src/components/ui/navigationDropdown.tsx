@@ -38,10 +38,12 @@ export const MenuSheet = () => (
             <Button variant={"link"}>Map</Button>
           </SheetClose>
         </Link>
-        <SheetClose>
-          <ResultDialog />
-        </SheetClose>
-        <Link href={"/documentation"}>
+        <ResultDialog />
+        <Link
+          href={
+            "https://taikai.network/cassinihackathons/hackathons/environment-greentransition/projects/cm10z30c0002t5v2aid9yadoa/idea"
+          }
+        >
           <SheetClose>
             <Button variant={"link"}>Documentation</Button>
           </SheetClose>
