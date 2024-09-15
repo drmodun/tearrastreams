@@ -99,14 +99,14 @@ const infoRowData: InfoRowProps[] = [
     title: "User-Generated Environmental Data",
     subtitle: "Empower Citizens to Contribute to Sustainability",
     description:
-      "With TerraStream, anyone can upload geo-tagged images and device data related to the environmental situation in their area. Add comments, report incidents, and provide valuable real-time data on deforestation, pollution, and local climate conditions. How It Works: ",
+      "With TerraStream, anyone can upload geo-tagged images and device data related to the environmental situation in their area. Add comments, report incidents, and provide valuable real-time data on deforestation, pollution, and local climate conditions.",
     //TODO: add bullet points later
   },
   {
     title: "Social Media Sentiment Analysis",
     subtitle: "Analyze Public Sentiment on Environmental Issues",
     description:
-      "With TerraStream’s social listening feature, we analyze social media posts related to the environment in monitored zones. By tracking geo-tagged posts, we perform sentiment analysis to understand how local communities feel about deforestation, pollution, and sustainability efforts. ",
+      "With TerraStream’s social listening feature, we analyze social media posts related to the environment in monitored zones. By tracking geo-tagged posts, we perform sentiment analysis to understand how local communities feel about deforestation, pollution, and sustainability efforts.",
   },
 ];
 
