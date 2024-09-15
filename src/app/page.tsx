@@ -7,6 +7,11 @@ import broadcast from "@assets/broadcast.svg";
 import personAdd from "@assets/person-add.svg";
 import announcement from "@assets/announcement.svg";
 import logoSection from "@assets/logo-section.svg";
+import {
+  FAQ,
+  FrequentlyAskedQuestionsProps,
+  QuestionProp,
+} from "@/components/ui/faq";
 
 const mainTitleButtons: TitleCardButtonProps[] = [
   {
@@ -51,12 +56,45 @@ const slimCardsData: SlimCardProps[] = [
   },
 ];
 
+const questions: QuestionProp[] = [
+  {
+    question: " How does TerraStream gather data?",
+    answer:
+      "TerraStream combines Copernicus satellite data, user-generated content, and social media sentiment to provide real-time risk assessments and insights. ",
+  },
+  {
+    question: "Can anyone upload environmental data?",
+    answer: "Absolutely not, data is heavily vetted and verified by our team.",
+  },
+  {
+    question: "How does social listening work?",
+    answer:
+      "TerraStream uses sentiment analysis and machine learning to track social media posts related to environmental issues. ",
+  },
+  {
+    question: "Is there a free trial?",
+    answer: "Yes, you can try TerraStream for free for 30 days.",
+  },
+  {
+    question: "How secure is my data?",
+    answer: "TerraStream cares about your privacy and data security. ",
+  },
+  {
+    question: "What integrations are available?",
+    answer:
+      "TerraStream integrates with GIS systems, social media monitoring platforms, and sustainability management software.",
+  },
+];
+
+// TODO: fix these questions
+
 export default function Home() {
   return (
     <div className="bg-[#101112] flex-col align-middle md:px-[19vw]">
       <TitleCard
         titleFirstPart="Your Data-Powered Environmental"
         specialWord="Risk"
+        sideContentImage
         titleSecondPart="Evaluator"
         superLargeFont
         description="Leverage satellite data, user-generated content, and social listening to deliver real-time insights on environmental risks. Empower your sustainability strategies with TerraStream today."
@@ -81,12 +119,24 @@ export default function Home() {
       <section className="flex-col md:gap-y-[2vw]">
         <TitleCard
           titleFirstPart="Seamless tool"
+          sideContentImage
           description=" TerraStream integrates with existing tools such as GIS systems, social media monitoring platforms, and sustainability management software."
           specialWord="Integration"
         >
           <div className="w-100%">
             <Image layout="fill" src={logoSection} alt="Hero image" priority />
           </div>
+        </TitleCard>
+      </section>
+      <section id="faq">
+        <TitleCard
+          titleFirstPart="Frequently Asked"
+          specialWord="Questions"
+          description="Have questions about our service? Find 
+        answers to the most common questions and learn how our 
+        platform gather data and enhance your policy making process."
+        >
+          <FAQ questions={questions} />
         </TitleCard>
       </section>
     </div>

@@ -28,6 +28,7 @@ export interface TitleCardProps {
   specialWord: string;
   superLargeFont?: boolean;
   titleSecondPart?: string;
+  sideContentImage?: boolean;
   description: string;
   children: React.ReactNode;
   buttons?: TitleCardButtonProps[];
@@ -37,6 +38,7 @@ export function TitleCard({
   titleFirstPart,
   titleSecondPart,
   specialWord,
+  sideContentImage,
   superLargeFont,
   description,
   children,
@@ -82,7 +84,14 @@ export function TitleCard({
           ))}
         </CardFooter>
       </section>
-      <section className="w-[100%] h-[100%] flex relative">{children}</section>
+      <section
+        className={cn(
+          "w-[100%] h-max-[100%] flex relative justify-center align-middle self-center",
+          sideContentImage && "md:h-[100%]"
+        )}
+      >
+        {children}
+      </section>
     </Card>
   );
 }
